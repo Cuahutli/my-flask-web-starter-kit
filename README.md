@@ -5,7 +5,7 @@
 ### Requirements:
 * Python 2.7.x
 * `node` with global installation of `gulp` and `bower`. Can be used without that global installations also.
-
+Basado en el proyecto [flask-web-starter-kit]: https://github.com/brijeshb42/flask-web-starter-kit]
 ### How to use ?
 * Clone this repo `git clone git@github.com:brijeshb42/flask-web-starter-kit.git`.
 * Create a new virtual environment `mkvirtualenv starter-kit`.

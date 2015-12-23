@@ -7,8 +7,8 @@ var gulp        = require("gulp"),
     usemin      = require("gulp-usemin"),
     htmlmin     = require("gulp-htmlmin"),
     less        = require("gulp-less"),
-    jshint      = require('gulp-jshint'),
-    livereload  = require('gulp-livereload');
+    jshint      = require('gulp-jshint');
+    //livereload  = require('gulp-livereload');
 
 var src = {
     root: "./frontend/",
@@ -56,8 +56,8 @@ gulp.task("less", function() {
         .pipe(plumber())
         .pipe(less())
         .pipe(gulp.dest(src.css))
-        .pipe(gulp.dest(dest.css))
-        .pipe(livereload());
+        .pipe(gulp.dest(dest.css));
+        //.pipe(livereload());
 });
 
 gulp.task("less-prod", function() {
@@ -76,8 +76,8 @@ gulp.task("usemin", ["less"], function() {
             html: [],
             js: [jshint()]
         }))
-        .pipe(gulp.dest(dest.html))
-        .pipe(livereload());
+        .pipe(gulp.dest(dest.html));
+        //.pipe(livereload());
 });
 
 gulp.task("usemin-prod", ["less-prod", "copy-img"], function() {
@@ -110,11 +110,11 @@ gulp.task("cssmin", ["htmlmin"], function() {
 });
 
 gulp.task("watch", ["copy-img", "usemin"], function() {
-    livereload.listen({
+  /*  livereload.listen({
         port: 35729,
         start: true
     });
-    console.info('Livereload on PORT '+livereload.options.port);
+    console.info('Livereload on PORT '+livereload.options.port);*/
     gulp.watch(src.html, ["usemin"]);
     gulp.watch(src.less+"*.less", ["less"])
     gulp.watch(src.js+"*.js", ["js"])

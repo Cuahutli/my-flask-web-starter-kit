@@ -15,7 +15,6 @@
 * Install bower packages `bower install`.
 * Copy `config.py.default` to `config.py`.
 * Make changes to `config.py` as required.
-* Create a symlink to `bower_components` folder inside `frontend` : `cd frontend && ln -s ../bower_components/ bower_components`.
 * Migrate DB (uses sqlite by default. Can be configured in `config.py`)
     * `python script.py db init`
     * `python script.py db migrate`
